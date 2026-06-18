@@ -8,12 +8,12 @@ public class Main{
 
         //menu
         while(resp!=5){
-            System.out.println("Bem vindo ao Sistema de Gerenciamento de tarefas!\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n 3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n 5 - Sair");
+            System.out.println("Bem vindo ao Sistema de Gerenciamento de tarefas!\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n5 - Sair");
             resp=sc.nextInt();
             switch(resp){
                 //adicionar tarefa
                 case 1:
-
+                    GerenciadorDeTarefas.adicionar();
                     break;
 
                 //remover tarefa
@@ -23,7 +23,7 @@ public class Main{
 
                 //listar tarefas
                 case 3:
-
+                    GerenciadorDeTarefas.listar();
                     break;
 
                 //alterar tarefa
