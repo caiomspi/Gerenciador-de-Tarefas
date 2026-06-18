@@ -25,10 +25,10 @@ public class GerenciadorDeTarefas {
         else{
             GerenciadorDeTarefas.tarefas.add(t.descricao);
         }
+        GerenciadorDeTarefas.tarefas.add(String.valueOf(t.status));
         t.id=GerenciadorDeTarefas.id;
         GerenciadorDeTarefas.tarefas.add(String.valueOf(t.id));
         GerenciadorDeTarefas.id=GerenciadorDeTarefas.id+1;
-        System.out.println(GerenciadorDeTarefas.tarefas);
     }
 
     public static void listar(){
