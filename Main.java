@@ -8,7 +8,7 @@ public class Main{
 
         //menu
         while(resp!=5){
-            System.out.println("Bem vindo ao Sistema de Gerenciamento de tarefas!\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n5 - Sair");
+            System.out.print("Bem vindo ao Sistema de Gerenciamento de tarefas!\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n5 - Sair\n\nResposta: ");
             resp=sc.nextInt();
             switch(resp){
                 //adicionar tarefa
@@ -37,7 +37,7 @@ public class Main{
                 
                 //outros valores
                 default:
-                    System.out.println("Valor Inválido!");
+                    System.out.println("\nValor Inválido!\n");
                     break;
 
             }

@@ -6,6 +6,7 @@ public class GerenciadorDeTarefas {
     static ArrayList<String> tarefas = new ArrayList<String>(); //array contendo tarefas
     static int id = 1;
 
+    //funcao par adicionar nova tarefa e guardar dentro do arraylist tarefas
     public static void adicionar(){
         Scanner sc = new Scanner(System.in);
         Tarefas t = new Tarefas();
@@ -28,10 +29,23 @@ public class GerenciadorDeTarefas {
         GerenciadorDeTarefas.tarefas.add(String.valueOf(t.status));
         t.id=GerenciadorDeTarefas.id;
         GerenciadorDeTarefas.tarefas.add(String.valueOf(t.id));
-        GerenciadorDeTarefas.id=GerenciadorDeTarefas.id+1;
+        GerenciadorDeTarefas.id+=1;
     }
 
+    //funcao para listar 
     public static void listar(){
-        System.out.println(GerenciadorDeTarefas.tarefas);
+        Tarefas t = new Tarefas();
+        int tam = GerenciadorDeTarefas.tarefas.size();
+        String status;
+        System.out.println("\nLista de Tarefas:");
+        if(t.status==true){
+            status="Feito!";
+        }
+        else{
+            status = "Nao Feito!";
+        }
+        for(int i=0;i<tam;i+=4){
+            System.out.println(Integer.parseInt(GerenciadorDeTarefas.tarefas.get(i+3)) + " - " + GerenciadorDeTarefas.tarefas.get(i) + " - " + status + "\nDescricao: " + GerenciadorDeTarefas.tarefas.get(i+1) + "\n"); //por algum motivo precisou voltar para inteiro
+        }
     }
 }
