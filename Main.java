@@ -18,7 +18,7 @@ public class Main{
 
                 //remover tarefa
                 case 2:
-
+                    GerenciadorDeTarefas.remover();
                     break;
 
                 //listar tarefas
