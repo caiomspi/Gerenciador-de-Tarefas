@@ -7,8 +7,9 @@ public class Main{
         Scanner sc = new Scanner(System.in);
 
         //menu
+        System.out.println("Bem Vindo ao Sistema de Gerenciamento de Tarefas!\n");
         while(resp!=5){
-            System.out.print("Bem vindo ao Sistema de Gerenciamento de tarefas!\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n5 - Sair\n\nResposta: ");
+            System.out.print("-------------MENU-------------\n\nDeseja realizar qual ação?\n1 - Adicionar Tarefa Nova\n2 - Remover Tarefa Existente\n3 - Listar Tarefas\n4 - Alterar Tarefa Existente\n5 - Sair\n\nResposta: ");
             resp=sc.nextInt();
             switch(resp){
                 //adicionar tarefa
