@@ -28,7 +28,7 @@ public class Main{
 
                 //alterar tarefa
                 case 4:
-
+                    GerenciadorDeTarefas.alterar();
                     break;
                 
                 //sair

@@ -32,20 +32,49 @@ public class GerenciadorDeTarefas {
         GerenciadorDeTarefas.id+=1;
     }
 
-    //funcao para listar 
+    
+    //funcao para mostrar a lista de tarefas
     public static void listar(){
-        Tarefas t = new Tarefas();
         int tam = GerenciadorDeTarefas.tarefas.size();
         String status;
         System.out.println("\nLista de Tarefas:");
-        if(t.status==true){
-            status="Feito!";
-        }
-        else{
-            status = "Nao Feito!";
-        }
         for(int i=0;i<tam;i+=4){
+            if(Boolean.valueOf(GerenciadorDeTarefas.tarefas.get(i+2))==true){
+                status="Feito!";
+            }
+            else{
+                status = "Nao Feito!";
+            }
             System.out.println(Integer.parseInt(GerenciadorDeTarefas.tarefas.get(i+3)) + " - " + GerenciadorDeTarefas.tarefas.get(i) + " - " + status + "\nDescricao: " + GerenciadorDeTarefas.tarefas.get(i+1) + "\n"); //por algum motivo precisou voltar para inteiro
+        }
+    }
+
+    //funcao para alterar de não feito para feito ou vice versa
+    public static void alterar(){
+        Scanner sc = new Scanner(System.in);
+        int tam = GerenciadorDeTarefas.tarefas.size(), escolha, i;
+        String status;
+        System.out.println("Qual tarefa você deseja alterar:\n");
+        for(i=0;i<tam;i+=4){
+            if(Boolean.valueOf(GerenciadorDeTarefas.tarefas.get(i+2))==true){
+                status="Feito!";
+            }
+            else{
+                status = "Nao Feito!";
+            }
+            System.out.print(Integer.parseInt(GerenciadorDeTarefas.tarefas.get(i+3)) + " - " + GerenciadorDeTarefas.tarefas.get(i) + " - " + status + "\nDescricao: " + GerenciadorDeTarefas.tarefas.get(i+1) + "\n\nResposta: "); //por algum motivo precisou voltar para inteiro
+        }
+        escolha=sc.nextInt()*3; //*3 ja que o id ta localizado nos multiplos de 3 do arraylist
+        for(i=3;i<tam;i+=4){
+            if(escolha==i){
+                System.out.println(i);
+                if(Boolean.valueOf(GerenciadorDeTarefas.tarefas.get(i-1))==false){
+                    GerenciadorDeTarefas.tarefas.set(i-1, String.valueOf(true));
+                }
+                else{
+                    GerenciadorDeTarefas.tarefas.set(i-1, String.valueOf(false));
+                }
+            }
         }
     }
 }
